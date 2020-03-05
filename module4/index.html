@@ -17,7 +17,7 @@
             <a-asset-item id="person-obj" src="assets/models/lego.obj"></a-asset-item>
             <a-asset-item id="lego_figure" src="assets/models/lego_figure/scene.gltf"></a-asset-item>
             <a-asset-item id="lego_house" src="assets/models/lego_house/scene.gltf"></a-asset-item>
-            <!-- <a-asset-item id="lego_man_walking" src="assets/models/lego_man_walking.gltf" animation></a-asset-item> -->
+            <a-asset-item id="lego_man_walking" src="assets/models/lego_man_walking/scene.gltf"></a-asset-item>
             <img id="skytexture" src="assets/img/bg.jpg">
 
         <!-- <a-mixin id="box" geometry="primitive: box; radius: 1"></a-mixin> -->
@@ -38,9 +38,12 @@
       
     <a-entity gltf-model="#lego_figure" position="1.287 5.746 -7.245 " scale="1.500 1.500 1.500"></a-entity>
     <a-entity gltf-model="#lego_house" position="0 0 -43.617" scale="150 150 150"></a-entity>
-    <!-- <a-entity gltf-model="#lego_man_walking" from="0 0 1" to="10 10 10" ></a-entity> -->
 
-    <a-entity entity-generator="mixin: random-1 model; num: 400"></a-entity>
+    <a-entity id="stuff" >
+        <a-entity gltf-model="#lego_man_walking" position="-5 0 0" animation="property: rotation; from:0 0 0; to:0 180 0; loop: true; dur:3000"></a-entity>
+    </a-entity>
+
+    <a-entity entity-generator="mixin: random-1 model; num: 50"></a-entity>
 
     <a-box static-body id="ground" width=1000 height=0.001 depth=1000 visible="true" color="#F8DE7E"></a-box>
     
